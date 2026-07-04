@@ -148,15 +148,15 @@ export default function Home() {
 
       {/* Sticky Blur Header Nav */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'h-20 bg-white/95 backdrop-blur-md border-b border-zinc-100 shadow-sm'
-        : 'h-28 bg-[#F5F0E8]/80 backdrop-blur-sm'
+        ? 'h-16 md:h-20 bg-white/95 backdrop-blur-md border-b border-zinc-100 shadow-sm'
+        : 'h-20 md:h-28 bg-[#F5F0E8]/80 backdrop-blur-sm'
         }`}>
         <div className="h-full w-full max-w-full mx-auto px-2 sm:px-4 md:px-6 flex items-center justify-between">
           <a href="#" className="flex items-center">
             <img
               src="/brand/redtech-logo-transparent.png"
               alt="RedTech Logo"
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-12 md:h-[54px]' : 'h-[60px] md:h-[66px]'
+              className={`object-contain transition-all duration-300 ${scrolled ? 'h-8 md:h-12' : 'h-10 md:h-[60px]'
                 }`}
             />
           </a>
@@ -205,7 +205,7 @@ export default function Home() {
 
         {/* Mobile menu overlay */}
         <div
-          className={`md:hidden fixed inset-x-0 ${scrolled ? 'top-20' : 'top-28'} bg-white border-b border-zinc-200 p-6 flex flex-col gap-4 shadow-xl z-40 transition-all duration-300 origin-top transform ${mobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
+          className={`md:hidden fixed inset-x-0 ${scrolled ? 'top-16' : 'top-20'} bg-white border-b border-zinc-200 p-6 flex flex-col gap-4 shadow-xl z-40 transition-all duration-300 origin-top transform ${mobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
             }`}
         >
           {["Work", "Services", "Process", "Contact"].map((link) => (
@@ -244,14 +244,14 @@ export default function Home() {
         }}></div>
 
         {/* ---- Bottom Content Area ---- */}
-        <div className="relative z-[3] min-h-screen flex flex-col pt-32">
+        <div className="relative z-[3] min-h-screen flex flex-col pt-24 md:pt-32">
           <motion.div
             style={{ y: heroTextY }}
             className="flex flex-1 items-center px-6 sm:px-8 lg:px-12 xl:px-16"
           >
             <div className="max-w-7xl mx-auto w-full">
-              <div className="w-full max-w-full text-center">
-                <h1 className="flex flex-col text-center">
+              <div className="w-full max-w-full text-left">
+                <h1 className="flex flex-col text-left items-start">
                   <motion.span
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ export default function Home() {
                 </h1>
 
                 {/* Feature icons row */}
-                <div className="mx-auto mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:mt-10">
+                <div className="mt-8 grid grid-cols-2 md:flex md:flex-wrap items-center justify-items-start md:justify-start gap-x-8 gap-y-4 sm:mt-10">
                   {[
                     {
                       label: "Fast Performance",
@@ -290,7 +290,7 @@ export default function Home() {
                       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.48 3.499a.6.6 0 011.04 0l2.26 4.58 5.06.735a.6.6 0 01.332 1.023l-3.66 3.568.864 5.04a.6.6 0 01-.87.632L12 16.707l-4.525 2.38a.6.6 0 01-.87-.632l.864-5.04-3.66-3.568a.6.6 0 01.332-1.023l5.06-.735 2.28-4.59z" />
                     }
                   ].map((feat, i) => (
-                    <div key={i} className="flex items-center justify-center gap-2 text-center sm:gap-3">
+                    <div key={i} className="flex items-center justify-start gap-2 text-left sm:gap-3">
                       <div className="flex items-center justify-center w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-brand-red/10 text-brand-red shrink-0">
                         <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           {feat.icon}
@@ -336,39 +336,141 @@ export default function Home() {
       </motion.section>
 
       {/* Modules/Apps Grid Section */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 border-y border-zinc-100">
+      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#F5F0E8]/20 border-y border-zinc-100">
         <div className="max-w-7xl mx-auto">
-          <div className="reveal-item opacity-0 translate-y-10 transition-all duration-1000 ease-out max-w-2xl mb-16">
-            <span className="sketch-kicker font-mono text-2xs uppercase tracking-widest text-brand-red mb-2">Services</span>
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+          <div className="reveal-item opacity-0 translate-y-10 transition-all duration-1000 ease-out max-w-3xl mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-[1.1]">
               WHAT WE BUILD
             </h2>
-            <p className="text-zinc-500 text-sm md:text-base mt-4 leading-relaxed">
-              Pick the modules you need now. Add more when the business is ready.
+            <p className="text-zinc-500 text-sm md:text-base mt-4 leading-relaxed max-w-xl">
+              Choose the core modules to power your operation today. Scale up dynamically as your requirements grow.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { idx: "01", name: "Websites", copy: "High-performance websites that load fast and convert visitors." },
-              { idx: "02", name: "Web Apps", copy: "Custom portals and dashboards for your unique workflow." },
-              { idx: "03", name: "Automation", copy: "Background systems that handle repetitive tasks automatically." },
-              { idx: "04", name: "Databases", copy: "Structured data systems that scale with your business." },
-              { idx: "05", name: "APIs", copy: "Connect your tools and services with custom API integrations." },
-              { idx: "06", name: "Analytics", copy: "Custom dashboards to track what matters to your business." },
-              { idx: "07", name: "CRM", copy: "Customer management systems that fit your sales process." },
-              { idx: "08", name: "Support", copy: "Ticketing and support platforms for your team and clients." },
+              {
+                idx: "01",
+                name: "Websites",
+                copy: "High-performance websites that load fast and convert visitors.",
+                tag: "Fast & SEO",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
+                  </svg>
+                )
+              },
+              {
+                idx: "02",
+                name: "Web Apps",
+                copy: "Custom portals and dashboards for your unique workflow.",
+                tag: "Custom UI",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                  </svg>
+                )
+              },
+              {
+                idx: "03",
+                name: "Automation",
+                copy: "Background systems that handle repetitive tasks automatically.",
+                tag: "24/7 Flow",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                )
+              },
+              {
+                idx: "04",
+                name: "Databases",
+                copy: "Structured data systems that scale with your business.",
+                tag: "Secure SQL",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0v3.75" />
+                  </svg>
+                )
+              },
+              {
+                idx: "05",
+                name: "APIs",
+                copy: "Connect your tools and services with custom API integrations.",
+                tag: "Integrations",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                  </svg>
+                )
+              },
+              {
+                idx: "06",
+                name: "Analytics",
+                copy: "Custom dashboards to track what matters to your business.",
+                tag: "BI & Reports",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                  </svg>
+                )
+              },
+              {
+                idx: "07",
+                name: "CRM",
+                copy: "Customer management systems that fit your sales process.",
+                tag: "Sales Pipeline",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A11.386 11.386 0 0110.089 20c-2.213 0-4.3-.645-6.07-1.757v-.11a4.125 4.125 0 017.532-2.492M10 12.5a3 3 0 100-6 3 3 0 000 6zM18 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                  </svg>
+                )
+              },
+              {
+                idx: "08",
+                name: "Support",
+                copy: "Ticketing and support platforms for your team and clients.",
+                tag: "Ticketing",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                )
+              }
             ].map((app, i) => (
               <div
                 key={app.name}
-                className={`reveal-item opacity-0 translate-y-10 transition-all duration-1000 ease-out app-tile-card bg-white border border-zinc-200 p-6 relative overflow-hidden group hover:shadow-lg hover:-translate-y-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-brand-red after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300 rounded-sm transition-all`}
+                className="reveal-item opacity-0 translate-y-10 transition-all duration-1000 ease-out group relative bg-white border border-zinc-200/80 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[220px]"
                 style={{ transitionDelay: `${i * 50}ms` }}
               >
-                <div className="font-mono text-xs text-brand-red/80 font-bold mb-4">{app.idx}</div>
-                <h3 className="odoo-arrow inline-flex font-display text-lg font-bold text-zinc-900 mb-2 group-hover:text-brand-red transition-colors">
-                  {app.name}
-                </h3>
-                <p className="text-xs text-zinc-500 leading-relaxed">{app.copy}</p>
+                {/* Background decorative big number */}
+                <div className="absolute -right-2 -bottom-2 font-display text-8xl font-black text-zinc-50 select-none group-hover:text-brand-red/[0.03] transition-colors duration-500">
+                  {app.idx}
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    {/* Icon Container with interactive pulse ring */}
+                    <div className="relative flex items-center justify-center w-12 h-12 bg-zinc-50 text-zinc-700 rounded-xl group-hover:bg-brand-red group-hover:text-white group-hover:shadow-lg group-hover:shadow-brand-red/20 transition-all duration-300">
+                      {app.icon}
+                    </div>
+
+                    {/* Service pill tag */}
+                    <span className="font-mono text-4xs uppercase tracking-widest text-zinc-400 group-hover:text-brand-red transition-colors duration-300 font-bold bg-zinc-50 group-hover:bg-brand-red/5 px-2.5 py-1 rounded-full">
+                      {app.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="font-display text-lg font-extrabold text-zinc-900 group-hover:text-brand-red transition-colors duration-300 mb-2">
+                    {app.name}
+                  </h3>
+                  <p className="text-zinc-500 text-xs leading-relaxed group-hover:text-zinc-600 transition-colors duration-300 pr-4">
+                    {app.copy}
+                  </p>
+                </div>
+
+                {/* Bottom line glow effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-red transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
               </div>
             ))}
           </div>
