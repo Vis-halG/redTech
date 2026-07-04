@@ -148,15 +148,15 @@ export default function Home() {
 
       {/* Sticky Blur Header Nav */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'h-16 bg-white/95 backdrop-blur-md border-b border-zinc-100 shadow-sm'
-        : 'h-20 bg-[#F5F0E8]/80 backdrop-blur-sm'
+        ? 'h-20 bg-white/95 backdrop-blur-md border-b border-zinc-100 shadow-sm'
+        : 'h-28 bg-[#F5F0E8]/80 backdrop-blur-sm'
         }`}>
         <div className="h-full w-full max-w-full mx-auto px-2 sm:px-4 md:px-6 flex items-center justify-between">
           <a href="#" className="flex items-center">
             <img
               src="/brand/redtech-logo-transparent.png"
               alt="RedTech Logo"
-              className={`object-contain transition-all duration-300 ${scrolled ? 'h-8 md:h-9' : 'h-10 md:h-11'
+              className={`object-contain transition-all duration-300 ${scrolled ? 'h-12 md:h-[54px]' : 'h-[60px] md:h-[66px]'
                 }`}
             />
           </a>
@@ -169,7 +169,7 @@ export default function Home() {
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className={`odoo-arrow inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors hover:text-zinc-900 ${scrolled ? 'text-zinc-500' : 'text-zinc-500'
+                    className={`inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors hover:text-zinc-900 ${scrolled ? 'text-zinc-500' : 'text-zinc-500'
                       }`}
                   >
                     {link}
@@ -205,7 +205,7 @@ export default function Home() {
 
         {/* Mobile menu overlay */}
         <div
-          className={`md:hidden fixed inset-x-0 top-16 bg-white border-b border-zinc-200 p-6 flex flex-col gap-4 shadow-xl z-40 transition-all duration-300 origin-top transform ${mobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
+          className={`md:hidden fixed inset-x-0 ${scrolled ? 'top-20' : 'top-28'} bg-white border-b border-zinc-200 p-6 flex flex-col gap-4 shadow-xl z-40 transition-all duration-300 origin-top transform ${mobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
             }`}
         >
           {["Work", "Services", "Process", "Contact"].map((link) => (
@@ -244,7 +244,7 @@ export default function Home() {
         }}></div>
 
         {/* ---- Bottom Content Area ---- */}
-        <div className="relative z-[3] min-h-screen flex flex-col pt-20">
+        <div className="relative z-[3] min-h-screen flex flex-col pt-32">
           <motion.div
             style={{ y: heroTextY }}
             className="flex flex-1 items-center px-6 sm:px-8 lg:px-12 xl:px-16"
@@ -552,7 +552,7 @@ export default function Home() {
             <img
               src="/brand/redtech-logo-transparent.png"
               alt="RedTech Logo"
-              className="h-7 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="h-[42px] object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </a>
           <div className="font-mono text-3xs text-zinc-500 uppercase tracking-widest">
